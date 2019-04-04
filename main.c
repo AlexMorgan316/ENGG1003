@@ -4,16 +4,14 @@ int main () {
     char input[] = "Encrypt this!";
     int i=0;
     int n = sizeof(input)/sizeof(char); // end point 
-    // char output[100];
     int k = 3;
     
     
-    
-    for (i=0; i<n; i++) {}
+    for (i=0; i<n; i++) {
         input [i]+= k;
-        printf ("%c", input [i]);
+        printf ("%c", input [i]); }
         
-        return 0;
+        return 0; 
 }
         
         
