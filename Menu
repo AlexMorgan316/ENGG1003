@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main()
+{
+    printf("\nMenu\n");
+    printf("1. Rotation Cipher Encryption\n");
+    printf("2. Rotation Cipher Decryption\n");
+    printf("3. Substitution Cipher Encryption\n");
+    printf("4. Substitution Cipher Decryption\n");
+    printf("5. Rotation Cipher Decryption WITHOUT KEY\n");
+    printf("6. Substitution Cipher Decryption WITHOUT KEY\n");
+
+
+    return 0;
+}
