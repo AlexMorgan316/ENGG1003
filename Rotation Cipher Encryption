@@ -6,11 +6,11 @@ int main () {
 char msg1[1000], ch;
 int i, key;
 
-printf("\nEnter key/rotation amount: ");
-scanf("%d", &key);
-
 printf("\nEnter message to encrypt: ");               
 scanf("%[^\n]s", msg1);
+
+printf("\nEnter key/rotation amount: ");
+scanf("%d", &key);
 
 for(i=0; i<strlen(msg1); i++) {
     
