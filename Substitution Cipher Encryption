@@ -2,3 +2,36 @@
 #include <string.h>
 
 int main () {
+    
+char lowercase[26]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+char uppercase[26]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+                          
+char key[27], msg3[1000];
+                          
+printf("\nEnter message to encrypt: ");
+scanf(" %[^\n]",msg3);
+
+int n,i;
+
+printf("\nEnter key/26 characters: ");
+scanf("%s",key);
+
+for(n=0;n<strlen(msg3);n++) {
+                           
+    for(i=0;i<26;i++) {
+                                
+        if(uppercase[i]==msg3[n]) { 
+                                  
+            msg3[n]=key[i];
+            break;
+        }
+        if(lowercase[i]==msg3[n]) {
+                            
+        msg3[n]=key[i];
+        break;
+        }
+    }
+}
+printf("\nEncrypted message: %s",msg3);
+return 0;
+}
