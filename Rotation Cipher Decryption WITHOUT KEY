@@ -10,7 +10,7 @@ int main () {
     scanf(" %[^\n]", msg5);
 	
 	
-	for(key=0; key<=25; key++) {
+	for(key=1; key<=25; key++) {
 	
     	for(i=0; msg5[i] != '\0'; ++i) {
     
