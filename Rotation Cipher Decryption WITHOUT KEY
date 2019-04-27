@@ -2,3 +2,35 @@
 #include <string.h>
 
 int main () {
+    
+    char msg5[1000], ch;
+	int i, key=0;
+	
+	printf("Enter message to decrypt: ");
+    scanf(" %[^\n]", msg5);
+	
+	
+	for(key=0; key<=25; key++) {
+	
+    	for(i=0; msg5[i] != '\0'; ++i) {
+    
+    		ch=msg5[i];
+    		
+    		if(ch>='A' && ch<='Z') { 
+    		
+    			ch=ch-1; 
+    			
+    			if(ch<'A') {
+    		
+    				ch=ch+'Z'-'A'+1;
+    			}
+    			
+    			msg5[i]=ch; 
+    		}
+    	}
+    	printf("\nKey/rotation amount: %d", key);
+    	printf("\nDecrypted message: %s", msg5);
+    }
+return 0;
+}
+
