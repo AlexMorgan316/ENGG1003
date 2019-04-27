@@ -7,7 +7,7 @@ char msg1[1000], ch;
 int i, key;
 
 printf("\nEnter message to encrypt: ");               
-scanf(" %[^\n]s", msg1);
+scanf(" %[^\n]", msg1);
 
 printf("\nEnter key/rotation amount: ");
 scanf("%d", &key);
