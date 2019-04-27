@@ -6,7 +6,7 @@ int main () {
     char msg5[1000], ch;
 	int i, key=0;
 	
-	printf("Enter message to decrypt: ");
+	printf("Enter message to decrypt (capitals): ");
     scanf(" %[^\n]", msg5);
 	
 	
