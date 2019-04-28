@@ -138,9 +138,9 @@ int main () {
                         if(lowercase[i]==msg3[n]) { //if the message lowercase, it will equal the key value of that letter.
                             
                             msg3[n]=keysub[i]; //Each letter of msg3 is substituted for the keysub letters.
-                            break; //Loop is exited
+                            break;
                         }
-                    }
+                    } //Loop is exited
                 }
                 printf("\nEncrypted message: %s",msg3); //Prints encrypted message to screen.
                 return 0; //Quits program.
@@ -162,21 +162,21 @@ int main () {
                             
                     for(i=0;i<26;i++) { //i is initialised to 0, while i is less than 26, i is incremented by 1 each time.
                                 
-                        if(msg4[n]==keysub[i]) {
+                        if(msg4[n]==keysub[i]) { //If each letter of msg4 is substituted for the keysub letters, it will equal the corresponding letter.
                                     
-                            msg4[n]=uppercase[i];
+                            msg4[n]=uppercase[i]; //The corresponding characters will be uppercase.
                             break;
                         }
-                        if(msg4[n]==keysub[i]) {
+                        if(msg4[n]==keysub[i]) { //If each letter of msg4 is substituted for the keysub letters, it will equal the corresponding letter.
                                     
-                            msg4[n]=lowercase[i];
+                            msg4[n]=lowercase[i]; //The corresponding characters will be lowercase.
                             break;
                         }
                         else {
             
-                            msg4[n]=msg4[n];
+                            msg4[n]=msg4[n]; //Else the message input is stored as an unchanged message.
                         }
-                    }
+                    } //Loop is exited
                 }
                 printf("\nDecrypted message: %s",msg4); //Prints decrypted message to screen.
                 return 0; //Quits program.
