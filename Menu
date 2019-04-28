@@ -8,8 +8,9 @@ int main()
     printf("3. Substitution Cipher Encryption\n");
     printf("4. Substitution Cipher Decryption\n");
     printf("5. Rotation Cipher Decryption WITHOUT KEY\n");
-    printf("6. Substitution Cipher Decryption WITHOUT KEY\n");
-
+    printf("6. Quit\n");
+    printf("\nSelect an option and press enter:  ");
+    scanf("%d",&userin);
 
     return 0;
 }
