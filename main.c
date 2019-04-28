@@ -24,17 +24,17 @@ int main () {
         case 1:
             {
                 char msg1[1000], ch; // Initialisation of msg1[1000] used as input and output message variable. Variable ch is used as character variable.
-                int i, keyrot; //Initialisation of i used as the counter variable. Variable key is used as the rotation amount
+                int i, keyrot; //Initialisation of i used as the counter variable. Variable key is used as the rotation amount.
                 
-                printf("\nEnter message to encrypt: ");               
+                printf("\nEnter message to encrypt: "); //User is prompted to enter a message to encrypt in UPPERCASE letters.              
                 scanf(" %[^\n]", msg1);
 
-                printf("\nEnter key/rotation amount: ");
-                scanf("%d", &keyrot);
+                printf("\nEnter key/rotation amount: "); //User is prompted to enter the key/alphabet rotation amount.
+                scanf("%d", &keyrot); //Stores rotation amount in variable keyrot.
 
-                for(i=0; i<strlen(msg1); i++) {
+                for(i=0; i<strlen(msg1); i++) { //For loop is used to shift each character in the message entered a set rotation amount.
     
-                    ch=msg1[i];
+                    ch=msg1[i]; //The character variable is stored as msg1 varable.
                     if(ch>=97 && ch<=122) {
         
                         ch=ch+keyrot;
@@ -60,26 +60,26 @@ int main () {
                         ch=ch;
                     }
 
-                    msg1[i]=ch;
+                    msg1[i]=ch; //The new encrypted message of size i has new character shift values for each letter in the message.
                 }
-                printf("\nEncrypted message: %s", msg1);
-                return 0; 
+                printf("\nEncrypted message: %s", msg1); //Prints encrypted message to screen.
+                return 0; //Quits program.
             }
         
         case 2:
             {
-                char msg2[1000], ch;
-                int i, keyrot;
+                char msg2[1000], ch; //initialisation of msg2[1000] used as input and output message variable. Variable ch is used as character variable
+                int i, keyrot; //Initialisation of i used as the counter variable. Variable key is used as the rotation amount.
                              
-                printf("Enter messsage to decrypt: ");
+                printf("Enter messsage to decrypt: "); //User is prompted to enter a message to decrypt in UPPERCASE letters.
                 scanf(" %[^\n]", msg2);
     
-                printf("\nEnter key/rotation amount: ");
-                scanf("%d", &keyrot);
+                printf("\nEnter key/rotation amount: "); //User is prompted to enter the key/alphabet rotation amount.
+                scanf("%d", &keyrot); //Stores rotation amount in variable keyrot.
     
-                for(i=0; i<strlen(msg2); i++) {
+                for(i=0; i<strlen(msg2); i++) { //For loop used to shift each character in the message entered a set rotation amount.
                     
-                    ch=msg2[i];
+                    ch=msg2[i]; //The character variable is stored as msg2 varable.
         
                     if(ch>=97 && ch<=122) {
         
@@ -107,10 +107,10 @@ int main () {
                         ch=ch;
                         }
     
-                        msg2[i]=ch;
+                        msg2[i]=ch; //The new decrypted message of size i has new character shift values for each letter in the message.
                 }          
-                printf("\nDecrypted message: %s", msg2);
-                return 0;
+                printf("\nDecrypted message: %s", msg2); //Prints decrypted message to screen.
+                return 0; //Quits program.
             }
         
         case 3:
