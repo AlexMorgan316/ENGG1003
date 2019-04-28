@@ -32,30 +32,30 @@ int main () {
                 printf("\nEnter key/rotation amount: "); //User is prompted to enter the key/alphabet rotation amount.
                 scanf("%d", &keyrot); //Stores rotation amount in variable keyrot.
 
-                for(i=0; i<strlen(msg1); i++) { //For loop is used to shift each character in the message entered a set rotation amount.
+                for(i=0; i<strlen(msg1); i++) { //For loop is used to shift each character in the message entered a set rotation amount. Initialises i to 0, while i is less than the string length.
     
                     ch=msg1[i]; //The character variable is stored as msg1 varable.
-                    if(ch>=97 && ch<=122) {
+                    if(ch>=97 && ch<=122) { //If the charachter is between 97 and 122 ASCII values, add key/rotation amount to the character.
         
-                        ch=ch+keyrot;
-                        if(ch<97) {
+                        ch=ch+keyrot; //Add key/rotation amount to the character as stated above.
+                        if(ch<97) { //If the character variable is less than the ASCII value of 97, rotate back to z.
             
-                            ch=ch-26;
+                            ch=ch-26; //value of 26 is subtracted to rotate back to z.
                         }
                     }
-                    if(ch>=65 && ch<=90) {
+                    if(ch>=65 && ch<=90) { //If the character is between 65 and 90 ASCII values, add key/rotation amount to the character.
 
                         ch=ch+keyrot;
-                        if(ch<65) {
+                        if(ch<65) { //If the character is less than the ASCII value of 65 subtract 26, rotating the characters back to Z.
 
-                            ch=ch-26;
+                            ch=ch-26; //value of 26 is subtracted to rotate back to Z.
                         }
-                        if(ch>=91) {
+                        if(ch>=91) { //If the character is greater than or equal to the special char ([), rotate back to A.
             
-                            ch=ch-26;
+                            ch=ch-26; //value of 26 is subtracted to rotate back to A.
                         }
                     }
-                    if(ch>=0 && ch<=64) {
+                    if(ch>=0 && ch<=64) { //if the ccharacter is between 0 and 64 ASCII values, dont encrypt as these are special characters.
         
                         ch=ch;
                     }
