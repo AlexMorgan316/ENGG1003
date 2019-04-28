@@ -1,5 +1,7 @@
+
+
 #include <stdio.h>
-#include <string.h>
+#include <string.h> 
 
 int main () {
    
@@ -7,22 +9,22 @@ int main () {
     char lowercase[26]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
     int userin;
     
-    printf("\nWELCOME TO THE ENCRYPTION AND DECRYPTION MENU\n");
+    printf("\nWELCOME TO THE ENCRYPTION AND DECRYPTION MENU\n"); // User friendly menu distinguishing the different tasks
     printf("1. Rotation Cipher Encryption\n");
     printf("2. Rotation Cipher Decryption\n");
     printf("3. Substitution Cipher Encryption\n");
     printf("4. Substitution Cipher Decryption\n");
     printf("5. Rotation Cipher Decryption WITHOUT KEY\n");
     printf("6. Quit\n");
-    printf("\nSelect an option and press enter:  ");
-    scanf("%d",&userin);
+    printf("\nSelect an option and press enter:  "); //User asked to select an option within the menu
+    scanf("%d",&userin); // User input is stored in the variable "userin" which is used in switch statement
     
-    switch (userin) {
+    switch (userin) { //Switch statement takes user input from menu and executes the option selected
         
         case 1:
             {
-                char msg1[1000], ch;
-                int i, keyrot;
+                char msg1[1000], ch; // Initialisation of msg1[1000] used as input and output message variable. Variable ch is used as character variable.
+                int i, keyrot; //Initialisation of i used as the counter variable. Variable key is used as the rotation amount
                 
                 printf("\nEnter message to encrypt: ");               
                 scanf(" %[^\n]", msg1);
