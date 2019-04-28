@@ -21,7 +21,7 @@ int main () {
     
     switch (userin) { //Switch statement takes user input from menu and executes the option selected
         
-        case 1:
+        case 1: //Rotation Cipher Encryption
             {
                 char msg1[1000], ch; // Initialisation of msg1[1000] used as input and output message variable. Variable ch is used as character variable.
                 int i, keyrot; //Initialisation of i used as the counter variable. Variable key is used as the rotation amount.
@@ -66,7 +66,7 @@ int main () {
                 return 0; //Quits program.
             }
         
-        case 2:
+        case 2: //Rotation Cipher Decryption
             {
                 char msg2[1000], ch; //initialisation of msg2[1000] used as input and output message variable. Variable ch is used as character variable
                 int i, keyrot; //Initialisation of i used as the counter variable. Variable key is used as the rotation amount.
@@ -113,17 +113,17 @@ int main () {
                 return 0; //Quits program.
             }
         
-        case 3:
+        case 3: //Substitution Cipher Encryption
             {
                 char keysub[27], msg3[1500];
                           
-                printf("\nEnter message to encrypt: ");
+                printf("\nEnter message to encrypt: "); //User is prompted to enter a message to encrypt in UPPERCASE letters.
                 scanf(" %[^\n]",msg3);
 
-                int n,i;
+                int n,i; //Initialising counter variables n and i to use for array size.
 
-                printf("\nEnter key/26 characters: ");
-                scanf("%s",keysub);
+                printf("\nEnter key/26 characters: "); //26 characters are entered in uppercase when prompted. Each character can only be used once.
+                scanf("%s",keysub); //Stores key input in keysub.
 
                 for(n=0;n<strlen(msg3);n++) {
                            
@@ -141,21 +141,21 @@ int main () {
                         }
                     }
                 }
-                printf("\nEncrypted message: %s",msg3);
-                return 0;
+                printf("\nEncrypted message: %s",msg3); //Prints encrypted message to screen.
+                return 0; //Quits program.
             }
         
-        case 4:
+        case 4: //Substitution Cipher Decryption
             {
                 char keysub[27], msg4[1500];
                           
-                printf("\nEnter message to decrypt: ");
-                scanf(" %[^\n]",msg4);
+                printf("\nEnter message to decrypt: "); //User is prompted to enter a message to decrypt in UPPERCASE letters.
+                scanf(" %[^\n]",msg4); //Stores key input in keysub.
 
-                int n,i;
+                int n,i; //Initialising counter variables n and i for array size.
 
-                printf("\nEnter key/26 characters: ");
-                scanf("%s",keysub);
+                printf("\nEnter key/26 characters: "); //26 characters are entered in uppercase when prompted. Each character can only be used once.
+                scanf("%s",keysub); //Stores key input in keysub.
                           
                 for(n=0;n<strlen(msg4);n++) {
                             
@@ -177,51 +177,51 @@ int main () {
                         }
                     }
                 }
-                printf("\nDecrypted message: %s",msg4);
-                return 0;
+                printf("\nDecrypted message: %s",msg4); //Prints decrypted message to screen.
+                return 0; //Quits program.
             }
         
-        case 5:
+        case 5: //Rotation Cipher Decryption WITHOUT KEY
             {
-                char msg5[1000], ch;
-                int i, key=1;
+                char msg5[1000], ch; // Initialisation of msg5[1000] used as input and output message variable. Variable ch used as character variable.
+                int i, key=1; //Initialisation of variable i as the counter variable. The key is used as the rotation amount (set key shift to 0 to test all key shifts).
 	
-                printf("Enter message to decrypt: ");
+                printf("Enter message to decrypt: "); //User is prompted to enter a message to decrypt in UPPERCASE letters.
                 scanf(" %[^\n]", msg5);
 	
 	
 	           for(key=1; key<=25; key++) {
 	
-    	           for(i=0; msg5[i] != '\0'; ++i) {
+    	           for(i=0; msg5[i] != '\0'; ++i) { //For loop used to shift each character in the message entered a set amount of key shifts. 
     
-    		          ch=msg5[i];
+    		          ch=msg5[i]; //Character variable is stored as msg5 varable.
     		
-    		          if(ch>='A' && ch<='Z') { 
+    		          if(ch>='A' && ch<='Z') { //If statement applies to the characters A-Z in the alphabet or the ASCII values between 65-90.
     		
-    			         ch=ch-1; 
+    			         ch=ch-1; //New decrypted character is equal to the character ASCII value -1. 
     			
-    			         if(ch<'A') {
+    			         if(ch<'A') { //If character is less than 'A' after ASCII value rotation
     			             
-    			             ch=ch+'Z'-'A'+1;
+    			             ch=ch+'Z'-'A'+1; //Loops character to A-Z by adding 'Z' value and substracting 'A' value +1 so the char is A-Z on completion.
     			         }
-    			         msg5[i]=ch; 
+    			         msg5[i]=ch; //The new decrypted message of size i has new character shift values for each letter in the message.
     		          }
     	           }
-    	           printf("\nKey/rotation amount: %d", key);
-    	           printf("\nDecrypted message: %s", msg5);
+    	           printf("\nKey/rotation amount: %d", key); //Prints key/rotation amount to terminal.
+    	           printf("\nDecrypted message: %s", msg5); //Prints list of decrypted messages between 1-25 to screen.
                 }
-                return 0;
+                return 0; //Quits program.
             }
         
-        case 6:
+        case 6: //Quit
             {
-                return 0;
+                return 0; //Quits program.
             }
  
         default:
             {
-                printf("Invalid option, select number between 1-6\n");
-                return 0;
+                printf("Invalid option, select number between 1-6\n"); //Prints "Invalid option" to terminal.
+                return 0; //Quits program.
             }
     }
 }
