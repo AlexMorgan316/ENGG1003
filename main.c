@@ -1,4 +1,29 @@
-
+/*
+ * Task: 
+ *  Programming Assignment 1
+ * 
+ * Repository name: 
+ *  ENGG1003
+ * 
+ * Description of Task: 
+ *  This program covers two different types of cipher algorithms; rotation cipher and substitution cipher. A menu has been created to distinguish between the different tasks.
+ *  A switch statement is used to execute the user's input from the menu allowing for a certain task to be completed. Once the task is successfully completed, the program will quit 
+ * 
+ * Rotation cipher;
+ *  Encryption: 
+ *      The first task encrypts a message by shifting the alphabet a certain number of places. 
+ *      "keyrot" is the number of letters the rotation cipher moves along the alphebet and its new corresponding value is given to the original letter, encrypting the message 
+ *  Deccryption:
+ *      Decryption replaces each letter of the encrypted message with an inverse alphabet key shift. 
+                                     The "key" is the number of letters by which the aplhabet is shifted when calculating the substitution. 
+                                     If key is not known, the program will test and send all possible key shifts and their message to the screen. 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
 
 #include <stdio.h>
 #include <string.h> 
