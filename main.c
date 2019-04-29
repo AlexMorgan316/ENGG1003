@@ -257,7 +257,7 @@ int main () {
                 char msg5[1000], ch; // Initialisation of msg5[1000] used as input and output message variable. Variable ch used as character variable.
                 int i, key=1; //Initialisation of variable i as the counter variable. The key is used as the rotation amount (set key shift to 0 to test all key shifts).
 	
-                fprintf(input,"Enter message to decrypt:\n"); //User is prompted to enter a message to decrypt in UPPERCASE letters.
+                fprintf(input,"\nEnter message to decrypt:\n"); //User is prompted to enter a message to decrypt in UPPERCASE letters.
                 fscanf(input," %[^\n]", msg5);
 	
 	
