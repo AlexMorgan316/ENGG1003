@@ -2,7 +2,7 @@
  * Task: 
  *  Programming Assignment 1
  * 
- * Repository name: 
+ * Repository/Project name: 
  *  ENGG1003
  * 
  * Description of Task: 
@@ -34,7 +34,17 @@
  * 
  * Program use:
  *  The program can be run by following these instructions:
- *      Create an a.out file by pressing the run button in the main.c file.
+ *      Open the "input.txt" file and make sure there is no text within.
+ *      Press run.
+ *      The user is then met by the Menu and is prompted to enter an option.
+ *      Enter a number between 1-6 directly after the colon (no space should be between the colon and the number).
+ *      Press run as stated.
+ *      The user is prompted to provide input to the new commands directly after the colons (no space should be between the colon and the input).
+ *      The program will successfully encrypt and decrypt the input
+ *      The run the program again, clear the text from the input.txt file and press run.
+ * 
+ *  To run the program in the terminal remove the input file code and replace the "fprintf" and "fscanf" with "printf" and "scanf" respectively and follow the instructions below:
+ *       Create an a.out file by pressing the run button in the main.c file.
  *      After this has been done, enter the terminal and type "cd ENGG1003/" to enter the project, then press enter.
  *      Type "ls" to reveal the list of files inside the project ENGG1003
  *      Type "./a.out" into the terminal to enter the output file.
@@ -42,7 +52,7 @@
  *      After the program quits, the user can run the program again by completing the above tasks again in the terminal. 
  *
  *      The user can choose between 6 menu options prompting the user to choose either an encryption, decryption, rotation cipher or substitution cipher.         
- *      After following the prompts, the program will encrypt or decrypt the text inputted and print the final product to the terminal.    
+ *      After following the prompts, the program will encrypt or decrypt the text inputted and print the final product in the input.txt file.    
  *          
  * Function definition:
  *  The function main is used for the program and a set of case functions are supplied by the switch statement. 
@@ -56,34 +66,38 @@
 #include <string.h> 
 
 int main () {
+    
+    FILE *input;
+    input = fopen ("input.txt", "r+");
    
     //Lowercase and uppercase chars are assigned an array value of 26 and the alphabet is initialised for both uppercase and lowercase letters.
     char uppercase[26]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
     char lowercase[26]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
     int userin; //Variable userin is declared as user input
     
-    printf("\nWELCOME TO THE ENCRYPTION AND DECRYPTION MENU\n"); // User friendly menu distinguishing the different tasks
-    printf("1. Rotation Cipher Encryption\n");
-    printf("2. Rotation Cipher Decryption\n");
-    printf("3. Substitution Cipher Encryption\n");
-    printf("4. Substitution Cipher Decryption\n");
-    printf("5. Rotation Cipher Decryption WITHOUT KEY\n");
-    printf("6. Quit\n");
-    printf("\nSelect an option and press enter:  "); //User asked to select an option within the menu
-    scanf("%d",&userin); // User input is stored in the variable "userin" which is used in switch statement
+    fprintf(input,"\nWELCOME TO THE ENCRYPTION AND DECRYPTION MENU\n\n"); // User friendly menu distinguishing the different tasks
+    fprintf(input,"1. Rotation Cipher Encryption\n");
+    fprintf(input,"2. Rotation Cipher Decryption\n");
+    fprintf(input,"3. Substitution Cipher Encryption\n");
+    fprintf(input,"4. Substitution Cipher Decryption\n");
+    fprintf(input,"5. Rotation Cipher Decryption WITHOUT KEY\n");
+    fprintf(input,"6. Quit\n");
+    fprintf(input,"\nSelect an option and press run:"); //User asked to select an option within the menu
+    fscanf(input,"%d", &userin); // User input is stored in the variable "userin" which is used in switch statement
     
     switch (userin) { //Switch statement takes user input from menu and executes the option selected
         
         case 1: //Rotation Cipher Encryption
             {
+                fprintf(input, "\n\nRotation Cipher Encryption\n");
                 char msg1[1000], ch; // Initialisation of msg1[1000] used as input and output message variable. Variable ch is used as character variable.
                 int i, keyrot; //Initialisation of i used as the counter variable. Variable key is used as the rotation amount.
                 
-                printf("\nEnter message to encrypt: "); //User is prompted to enter a message to encrypt in UPPERCASE letters.              
-                scanf(" %[^\n]", msg1);
+                fprintf(input,"\nEnter message to encrypt:"); //User is prompted to enter a message to encrypt in UPPERCASE letters.              
+                fscanf(input," %[^\n]", msg1);
 
-                printf("\nEnter key/rotation amount: "); //User is prompted to enter the key/alphabet rotation amount.
-                scanf("%d", &keyrot); //Stores rotation amount in variable keyrot.
+                fprintf(input, "\nEnter key/rotation amount:"); //User is prompted to enter the key/alphabet rotation amount.
+                fscanf(input, "%d", &keyrot); //Stores rotation amount in variable keyrot.
 
                 for(i=0; i<strlen(msg1); i++) { //For loop is used to shift each character in the message entered a set rotation amount. Initialises i to 0, while i is less than the string length.
     
@@ -115,20 +129,21 @@ int main () {
 
                     msg1[i]=ch; //The new encrypted message of size i has new character shift values for each letter in the message.
                 }
-                printf("\nEncrypted message: %s", msg1); //Prints encrypted message to screen.
+                fprintf(input, "\nEncrypted message -  %s", msg1); //Prints encrypted message to screen.
                 return 0; //Quits program.
             }
         
         case 2: //Rotation Cipher Decryption
             {
+                fprintf(input, "\n\nRotation Cipher Decryption\n");
                 char msg2[1000], ch; //initialisation of msg2[1000] used as input and output message variable. Variable ch is used as character variable
                 int i, keyrot; //Initialisation of i used as the counter variable. Variable key is used as the rotation amount.
                              
-                printf("Enter messsage to decrypt: "); //User is prompted to enter a message to decrypt in UPPERCASE letters.
-                scanf(" %[^\n]", msg2);
+                fprintf(input,"\nEnter messsage to decrypt:"); //User is prompted to enter a message to decrypt in UPPERCASE letters.
+                fscanf(input," %[^\n]", msg2);
     
-                printf("\nEnter key/rotation amount: "); //User is prompted to enter the key/alphabet rotation amount.
-                scanf("%d", &keyrot); //Stores rotation amount in variable keyrot.
+                fprintf(input,"\nEnter key/rotation amount:"); //User is prompted to enter the key/alphabet rotation amount.
+                fscanf(input,"%d", &keyrot); //Stores rotation amount in variable keyrot.
     
                 for(i=0; i<strlen(msg2); i++) { //For loop used to shift each character in the message entered a set rotation amount.
                     
@@ -162,21 +177,22 @@ int main () {
     
                         msg2[i]=ch; //The new decrypted message of size i has new character shift values for each letter in the message.
                 }          
-                printf("\nDecrypted message: %s", msg2); //Prints decrypted message to screen.
+                fprintf(input,"\nDecrypted message -  %s", msg2); //Prints decrypted message to screen.
                 return 0; //Quits program.
             }
         
         case 3: //Substitution Cipher Encryption
             {
+                fprintf(input, "\n\nSubstitution Cipher Encryption\n");
                 char keysub[27], msg3[1500]; //Keysub value is assigned memory value of 27. Memory value of 1500 is given to the message input initialised as msg3. 
                           
-                printf("\nEnter message to encrypt: "); //User is prompted to enter a message to encrypt in UPPERCASE letters.
-                scanf(" %[^\n]",msg3); //User input is scanned for string msg3.
+                fprintf(input, "\nEnter message to encrypt:"); //User is prompted to enter a message to encrypt in UPPERCASE letters.
+                fscanf(input, " %[^\n]",msg3); //User input is scanned for string msg3.
 
                 int n,i; //Initialising counter variables n and i to use for array size.
 
-                printf("\nEnter key/26 characters: "); //26 characters are entered in uppercase when prompted. Each character can only be used once.
-                scanf("%s",keysub); //Stores key input in keysub.
+                fprintf(input, "\nEnter key/26 characters:"); //26 characters are entered in uppercase when prompted. Each character can only be used once.
+                fscanf(input, "%s",keysub); //Stores key input in keysub.
 
                 for(n=0;n<strlen(msg3);n++) { //n is initialised to 0, while n is less than string length in text in "msg3", n is incremented by 1 each time.
                            
@@ -194,21 +210,22 @@ int main () {
                         }
                     } //Loop is exited
                 }
-                printf("\nEncrypted message: %s",msg3); //Prints encrypted message to screen.
+                fprintf(input, "\nEncrypted message -  %s",msg3); //Prints encrypted message to screen.
                 return 0; //Quits program.
             }
         
         case 4: //Substitution Cipher Decryption
             {
+                fprintf(input, "\n\nSubstitution Cipher Decryption\n");
                 char keysub[27], msg4[1500]; //Keysub value is assigned memory value of 27. Memory value of 1500 is given to the message input initialised as msg4.
                           
-                printf("\nEnter message to decrypt: "); //User is prompted to enter a message to decrypt in UPPERCASE letters.
-                scanf(" %[^\n]",msg4); //User input is scanned for string msg3.
+                fprintf(input,"\nEnter message to decrypt:"); //User is prompted to enter a message to decrypt in UPPERCASE letters.
+                fscanf(input," %[^\n]",msg4); //User input is scanned for string msg3.
 
                 int n,i; //Initialising counter variables n and i for array size.
 
-                printf("\nEnter key/26 characters: "); //26 characters are entered in uppercase when prompted. Each character can only be used once.
-                scanf("%s",keysub); //Stores key input in keysub.
+                fprintf(input,"\nEnter key/26 characters:"); //26 characters are entered in uppercase when prompted. Each character can only be used once.
+                fscanf(input,"%s",keysub); //Stores key input in keysub.
                           
                 for(n=0;n<strlen(msg4);n++) { //n is initialised to 0, while n is less than string length in text in "msg4", n is incremented by 1 each time
                             
@@ -230,17 +247,18 @@ int main () {
                         }
                     } //Loop is exited
                 }
-                printf("\nDecrypted message: %s",msg4); //Prints decrypted message to screen.
+                fprintf(input,"\nDecrypted message -  %s",msg4); //Prints decrypted message to screen.
                 return 0; //Quits program.
             }
         
         case 5: //Rotation Cipher Decryption WITHOUT KEY
             {
+                fprintf(input, "\n\nRotation Cipher Decryption WITHOUT KEY\n");
                 char msg5[1000], ch; // Initialisation of msg5[1000] used as input and output message variable. Variable ch used as character variable.
                 int i, key=1; //Initialisation of variable i as the counter variable. The key is used as the rotation amount (set key shift to 0 to test all key shifts).
 	
-                printf("Enter message to decrypt: "); //User is prompted to enter a message to decrypt in UPPERCASE letters.
-                scanf(" %[^\n]", msg5);
+                fprintf(input,"Enter message to decrypt:\n"); //User is prompted to enter a message to decrypt in UPPERCASE letters.
+                fscanf(input," %[^\n]", msg5);
 	
 	
 	           for(key=1; key<=25; key++) { //Key is initialised to 1, while key is less than or equal to 25, key is incremented by 1 each time
@@ -260,8 +278,8 @@ int main () {
     			         msg5[i]=ch; //The new decrypted message of size i has new character shift values for each letter in the message.
     		          }
     	           }
-    	           printf("\nKey/rotation amount: %d", key); //Prints key/rotation amount to terminal.
-    	           printf("\nDecrypted message: %s", msg5); //Prints list of decrypted messages between 1-25 to screen.
+    	           fprintf(input,"\nKey/rotation amount -  %d", key); //Prints key/rotation amount to terminal.
+    	           fprintf(input,"\nDecrypted message -  %s", msg5); //Prints list of decrypted messages between 1-25 to screen.
                 }
                 return 0; //Quits program.
             }
@@ -274,8 +292,7 @@ int main () {
         default:
             {
                 printf("Invalid option, select number between 1-6\n"); //Prints "Invalid option" to terminal.
-                return 0; //Quits program.
+                break; //Quits program.
             }
     }
 }
-
