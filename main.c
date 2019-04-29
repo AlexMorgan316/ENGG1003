@@ -278,8 +278,8 @@ int main () {
     			         msg5[i]=ch; //The new decrypted message of size i has new character shift values for each letter in the message.
     		          }
     	           }
-    	           fprintf(input,"\nKey/rotation amount -  %d", key); //Prints key/rotation amount to terminal.
-    	           fprintf(input,"\nDecrypted message -  %s", msg5); //Prints list of decrypted messages between 1-25 to screen.
+    	           fprintf(input,"\n\n\nKey/rotation amount -  %d", key); //Prints key/rotation amount to terminal.
+    	           fprintf(input,"\nDecrypted message   -  %s", msg5); //Prints list of decrypted messages between 1-25 to screen.
                 }
                 return 0; //Quits program.
             }
