@@ -9,19 +9,46 @@
  *  This program covers two different types of cipher algorithms; rotation cipher and substitution cipher. A menu has been created to distinguish between the different tasks.
  *  A switch statement is used to execute the user's input from the menu allowing for a certain task to be completed. Once the task is successfully completed, the program will quit 
  * 
- * Rotation cipher;
+ * Rotation cipher:
  *  Encryption: 
  *      The first task encrypts a message by shifting the alphabet a certain number of places. 
- *      "keyrot" is the number of letters the rotation cipher moves along the alphebet and its new corresponding value is given to the original letter, encrypting the message 
- *  Deccryption:
- *      Decryption replaces each letter of the encrypted message with an inverse alphabet key shift. 
-                                     The "key" is the number of letters by which the aplhabet is shifted when calculating the substitution. 
-                                     If key is not known, the program will test and send all possible key shifts and their message to the screen. 
+ *      "keyrot" is the number of letters the rotation cipher moves along the alphabet and its new corresponding value is given to the original letter, encrypting the message 
+ *  
+ *  Decryption:
+ *      The second task decrypts a message by replaces the letters of the encrypted message with the inverse of the key/rotation amount. 
+ *      "keyrot" is the number of letters the roation cipher moves along the alphabet and its original letter is given to the corresponding value. 
+ *  
+ *  Decryption WITHOUT KEY:                       
+ *      The fifth task decrypts a rotation cipher is the key is ot known
+ *      A for loop allows for all key options between 1-25 to be tested and printed to the screen along with the decrypted message.
+ *      The user can then identify the successfully decrypted message by scrolling through the list. 
  * 
+ * Substitution cipher:
+ *  Encryption:
+ *      The third task encrypts a message by substituting the 26 letters of the alphabet and encrypting them with a new set of letters.
+ *      "keysub" is the new list of 26 encrypted letters and each letter of the message is given the new corresponding value.
  * 
+ *  Decryption:
+ *      The forth task decrypts a message by replacing the decryption key with the original 26 letters of the alphabet.
+ *      "keysub" is the list of 26 letters for which the message is decrypted with the original 26 letters of the alphabet.
  * 
- * 
- * 
+ * Program use:
+ *  The program can be run by following these instructions:
+ *      Create an a.out file by pressing the run button in the main.c file.
+ *      After this has been done, enter the terminal and type "cd ENGG1003/" to enter the project, then press enter.
+ *      Type "ls" to reveal the list of files inside the project ENGG1003
+ *      Type "./a.out" into the terminal to enter the output file.
+ *      The user is then met by the Menu and is prompted to enter an option.
+ *      After the program quits, the user can run the program again by completing the above tasks again in the terminal. 
+ *
+ *      The user can choose between 6 menu options prompting the user to choose either an encryption, decryption, rotation cipher or substitution cipher.         
+ *      After following the prompts, the program will encrypt or decrypt the text inputted and print the final product to the terminal.    
+ *          
+ * Function definition:
+ *  The function main is used for the program and a set of case functions are supplied by the switch statement. 
+ *  Inputs are detailed within each case and include:
+ *      char uppercase[26], lowercase[26], keysub[27], msg1[1000], msg2[1000], msg3[1500], msg4[1500], msg5[1000]
+ *      int userin, keyrot, keysub, i, n, key=1 (used in the for statement in task 5)        
  * 
  */
 
