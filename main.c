@@ -191,7 +191,7 @@ int main () {
                 scanf(" %[^\n]", msg5);
 	
 	
-	           for(key=1; key<=25; key++) {
+	           for(key=1; key<=25; key++) { //Key is initialised to 1, while key is less than or equal to 25, key is incremented by 1 each time
 	
     	           for(i=0; msg5[i] != '\0'; ++i) { //For loop used to shift each character in the message entered a set amount of key shifts. 
     
